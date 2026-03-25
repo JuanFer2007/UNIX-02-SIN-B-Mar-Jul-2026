@@ -1,0 +1,1 @@
+gpg --armor --export #Exports ALL your public keys in ASCII-armored format.
