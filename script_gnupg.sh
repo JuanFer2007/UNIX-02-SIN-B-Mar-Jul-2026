@@ -15,4 +15,5 @@ gpg --verify andy_doc_no_cifrado_firmado_binario.txt #Verifies Andy's BINARY sig
 gpg --output firma_separada_doc_no_cifrado.sig --detach-sign doc_no_cifrado.txt #Creates SEPARATE signature file (detached signature).
 gpg --verify andy_firma_separada_doc_no_cifrado.sig andy_doc_no_cifrado.txt #Verifies Andy's detached signature against the original file.
 gpg --output doc_cifrado_y_firmado.txt --encrypt --sign --recipient A91C2A6252985C72 doc_no_cifrado.txt #ENCRYPT + SIGN in one command (ultimate security).
+gpg --output doc_cifrado_y_firmado_descifrado_y_validado.txt --decrypt andy_doc_cifrado_y_firmado.txt #Decrypts AND verifies signature from Andy's encrypted+signed file.
 
