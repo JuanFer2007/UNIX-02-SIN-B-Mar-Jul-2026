@@ -8,3 +8,4 @@ gpg --output doc_no_cifrado_firmado.txt --clearsign doc_no_cifrado.txt #Creates 
 cat doc_no_cifrado_firmado.txt #Displays the content of your signed file to verify the clearsign worked.
 gpg --verify MICOMPA_doc_no_cifrado_firmado.txt #Verifies the digital signature on the clearsigned file to prove authenticity and integrity.
 gpg --edit-key FD999E623F0E6A05942CE911A91C2A6252985C72 #nteractive key management for the specific key with ID FD999E623F0E6A05942CE911A91C2A6252985C72.
+gpg --sign-key A91C2A6252985C72 #Signs another person's public key with your private key to certify trust.
