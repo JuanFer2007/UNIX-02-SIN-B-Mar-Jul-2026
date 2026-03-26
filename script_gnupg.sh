@@ -6,3 +6,4 @@ gpg --output doc_cifrado.txt --encrypt --recipient FD999E623F0E6A05942CE911A91C2
 gpg --decrypt andy_doc_cifrado.txt # Decrypts the encrypted file andy_doc_cifrado.txt and displays content on screen.
 gpg --output doc_no_cifrado_firmado.txt --clearsign doc_no_cifrado.txt #Creates a digital signature of the file while keeping original text readable.
 cat doc_no_cifrado_firmado.txt #Displays the content of your signed file to verify the clearsign worked.
+gpg --verify MICOMPA_doc_no_cifrado_firmado.txt #Verifies the digital signature on the clearsigned file to prove authenticity and integrity.
