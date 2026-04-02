@@ -4,3 +4,4 @@ sudo chmod +x /bin/saludo # Makes saludo executable by everyone
 saludo # Test global
 pwd #print working directory
 cd # change directory
+ls -F # It displays files and folders by adding a symbol to the end of each name to indicate its type.
