@@ -3,3 +3,4 @@ sudo cp saludo /bin/ #Install global
 sudo chmod +x /bin/saludo # Makes saludo executable by everyone
 saludo # Test global
 pwd #print working directory
+cd # change directory
