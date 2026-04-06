@@ -9,3 +9,6 @@ las -lai #total 12
          #925544 drwxr-xr-x 2 codespace codespace 4096 Apr  6 12:36 .
          #918515 drwxr-x--- 1 codespace codespace 4096 Apr  6 12:36 ..
 stat . #Displays **DETAILED** information about the current file/directory (.)
+mkdir -p /tmp/prueba/sub1 /tmp/prueba/sub2 #Creates folders (parent and child) even if they don't exist
+stat /tmp/prueba #
+man mkdir #
