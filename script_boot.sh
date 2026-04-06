@@ -13,7 +13,7 @@ mkdir -p /tmp/prueba/sub1 /tmp/prueba/sub2 #Creates folders (parent and child) e
 stat /tmp/prueba #Displays detailed information from /tmp/test. 
 man mkdir #Open the mkdir MANUAL on screen
 pwd #Print Working Directory
-whoami #
+whoami # Displays the current user's name
 ls #
 ls -l # 
 ls -la #
