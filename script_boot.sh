@@ -8,3 +8,4 @@ cd proyecto/ #Change to the newly created "project" directory (the / is optional
 las -lai #total 12
          #925544 drwxr-xr-x 2 codespace codespace 4096 Apr  6 12:36 .
          #918515 drwxr-x--- 1 codespace codespace 4096 Apr  6 12:36 ..
+stat . #Displays **DETAILED** information about the current file/directory (.)
