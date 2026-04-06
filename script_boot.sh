@@ -16,6 +16,9 @@ pwd #Print Working Directory
 whoami # Displays the current user's name
 ls #List of files/folders in the current directory
 ls -l # List with long details (permits, owner, size, date)
-ls -la #
-ls -lh #
-ls -lt #
+ls -la #Detailed list + HIDDEN files (starting with .)
+ls -lh #Detailed list with HUMAN sizes (KB, MB, GB)
+ls -lt #Detailed list ORDERED by DATE (most recent first)
+ls / #List the contents of the ROOT directory (/)
+ls / etc | head -20 #List /etc and display ONLY the first 20 lines
+ls /dev | head -20 #List /dev and display ONLY the first 20 lines
