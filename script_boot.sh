@@ -12,13 +12,13 @@ stat . #Displays **DETAILED** information about the current file/directory (.)
 mkdir -p /tmp/prueba/sub1 /tmp/prueba/sub2 #Creates folders (parent and child) even if they don't exist
 stat /tmp/prueba #Displays detailed information from /tmp/test. 
 man mkdir #Open the mkdir MANUAL on screen
-pwd #Print Working Directory
-whoami # Displays the current user's name
-ls #List of files/folders in the current directory
-ls -l # List with long details (permits, owner, size, date)
-ls -la #Detailed list + HIDDEN files (starting with .)
-ls -lh #Detailed list with HUMAN sizes (KB, MB, GB)
-ls -lt #Detailed list ORDERED by DATE (most recent first)
-ls / #List the contents of the ROOT directory (/)
-ls / etc | head -20 #List /etc and display ONLY the first 20 lines
-ls /dev | head -20 #List /dev and display ONLY the first 20 lines
+pwd #Print Working Directory.
+whoami # Displays the current user's name.
+ls #List of files/folders in the current directory.
+ls -l # List with long details (permits, owner, size, date).
+ls -la #Detailed list + HIDDEN files (starting with .).
+ls -lh #Detailed list with HUMAN sizes (KB, MB, GB).
+ls -lt #Detailed list ORDERED by DATE (most recent first).
+ls / #List the contents of the ROOT directory (/).
+ls / etc | head -20 #List /etc and display ONLY the first 20 lines.
+ls /dev | head -20 #List /dev and display ONLY the first 20 lines.
