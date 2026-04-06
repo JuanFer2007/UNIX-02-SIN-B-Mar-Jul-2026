@@ -11,4 +11,4 @@ las -lai #total 12
 stat . #Displays **DETAILED** information about the current file/directory (.)
 mkdir -p /tmp/prueba/sub1 /tmp/prueba/sub2 #Creates folders (parent and child) even if they don't exist
 stat /tmp/prueba #Displays detailed information from /tmp/test
-man mkdir #
+man mkdir #Open the mkdir MANUAL on screen
