@@ -14,7 +14,7 @@ stat /tmp/prueba #Displays detailed information from /tmp/test.
 man mkdir #Open the mkdir MANUAL on screen
 pwd #Print Working Directory
 whoami # Displays the current user's name
-ls #
+ls #List of files/folders in the current directory
 ls -l # 
 ls -la #
 ls -lh #
