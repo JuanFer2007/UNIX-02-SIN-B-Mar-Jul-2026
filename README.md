@@ -27,3 +27,4 @@ sudo apt update #Updates the local package index to discover available updates f
 sudo apt install -y git vim make gcc libncurses-dev flex bison bc cpio libelf-dev libssl-dev syslinux dosfstools qemu-system-x86 # Installs the necessary toolchain and dependencies for compiling the Linux Kernel.
 git clone --depth 1 https://github.com/torvalds/linux.git #Clones the Linux Kernel source code with a history depth of 1 to save disk space.
 cd linux #Changes the current working directory to the Linux Kernel source folder.
+make menuconfig #Launches a text-based interface to customize and save the Linux Kernel configuration.
