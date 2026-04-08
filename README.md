@@ -2,7 +2,7 @@ el sistema que vamos a construir tenemos tres componentes
 1# kernel linux -el nucleo del sistema operativo
 2# busybox -proporciona las utilidades basicas de unix (ls,pwd,vi,etc)en un solo binario
 3#SysLinux -el bootloader que carga todo al arrancar
-sudo apt update # Updates package lists from repositories
+ apt updasudote # Updates package lists from repositories
 sudo apt upgrade # Upgrades ALL installed packages to latest versions
 sudo apt install -y git vim make gec libncurses-dev flex bison bc cpio libelf-dev libssl-dev syslinux dosfstools qemu-system-x86 
 
@@ -23,3 +23,5 @@ git clone --depth 1 https://github.com/torvalds/linux.git #Clone ONLY the most r
 cd linux
 make menuconfig # Configure kernel
 make - j 2 # Compile (uses all CPU cores) 
+sudo apt update #Updates the local package index to discover available updates for your system.
+
