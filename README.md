@@ -28,3 +28,4 @@ sudo apt install -y git vim make gcc libncurses-dev flex bison bc cpio libelf-de
 git clone --depth 1 https://github.com/torvalds/linux.git #Clones the Linux Kernel source code with a history depth of 1 to save disk space.
 cd linux #Changes the current working directory to the Linux Kernel source folder.
 make menuconfig #Launches a text-based interface to customize and save the Linux Kernel configuration.
+make -j 2 # Compiles the Linux Kernel using 2 processor cores to speed up the process.
