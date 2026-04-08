@@ -24,4 +24,4 @@ cd linux
 make menuconfig # Configure kernel
 make - j 2 # Compile (uses all CPU cores) 
 sudo apt update #Updates the local package index to discover available updates for your system.
-sudo apt install -y git vim make gec libncurses-dev flex bison bc cpio libelf-dev libssl-dev syslinux dosfstools qemu-system-x86 # Installs all necessary dependencies for compiling the Linux Kernel and system emulation.
+sudo apt install -y git vim make gcc libncurses-dev flex bison bc cpio libelf-dev libssl-dev syslinux dosfstools qemu-system-x86 # Installs all necessary dependencies for compiling the Linux Kernel and system emulation.
