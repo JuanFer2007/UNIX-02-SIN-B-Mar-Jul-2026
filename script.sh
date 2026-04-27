@@ -21,5 +21,59 @@ chmod +x script.sh # Grants execution permissions to the specified file or scrip
 chmod u+x script.sh # Grants execution permission specifically to the owner of the script
 chmod o-r script.sh # Removes read permission from "others" to prevent unauthorized viewing of the script
 chmod u+rw,go-rwx script.sh # Grants read/write to owner and strips all permissions from group and others
+umask #Set the file creation mask to ensure new files and directories have restrictive default permissions (e.g., only the owner can write).
+touch archivo1 #Creates an empty file named 'archivo1'. If the file already exists, it updates its timestamp.
+mkdir directorio1: #Creates a new directory (folder) named 'directorio1' in the current path.
+ls -l: #Lists the contents of the current directory in long format, showing details like permissions, owner, size, and modification date.
+total 48
+-rw-rw-rw-  1 codespace root      34523 Apr 13 12:16 LICENSE
+-rw-rw-rw-  1 codespace root         70 Apr 13 12:16 README.md
+-rw-rw-rw-  1 codespace codespace     0 Apr 27 12:32 archivo1
+drwxrwxrwx+ 2 codespace codespace  4096 Apr 27 12:32 directorio1
+-rwx------  1 codespace codespace  1937 Apr 27 12:31 script.sh #The output displays a detailed list of files and directories. It shows that archivo1 and directorio1 were recently created with broad read/write permissions, while script.sh is a private executable file restricted to the owner only.
+
+total 52
+-rw-rw-rw-  1 codespace root      34523 Apr 13 12:16 LICENSE
+-rw-rw-rw-  1 codespace root         70 Apr 13 12:16 README.md
+-rw-rw-rw-  1 codespace codespace     0 Apr 27 12:32 archivo1
+-rw-rw-rw-  1 codespace codespace     0 Apr 27 12:35 archivo2
+drwxrwxrwx+ 2 codespace codespace  4096 Apr 27 12:32 directorio1
+drwxrwxrwx+ 2 codespace codespace  4096 Apr 27 12:35 directorio2
+-rwx------  1 codespace codespace  1937 Apr 27 12:31 script.sh #The total block count increased from 48 to 52 due to the creation of 'archivo2' and 'directorio2'. The permissions remain consistent with the previous state, indicating the umask setting is still active for new entries.
+# Recursively change the ownership of the current directory to the current user
+
+# Update the local package index to pull the latest information about available software and versions
+sudo apt-get update
+# Upgrade all currently installed packages to their latest available versions
+sudo apt-get upgrade
+# Install the Access Control List (ACL) utility to manage fine-grained file permissions
+sudo apt-get install acl
+# Recursively change the ownership of the current directory and all its contents to the current user
+sudo chown -R $(whoami) .
+# Recursively change the ownership of the current directory to the logged-in user
+sudo chown -R $(whoami) .
+# Remove all extended ACL entries and reset to standard permissions recursively
+sudo setfacl -bnR .
+# Set a highly restrictive mask: only the owner will have full access to new files
+umask 077
+# Create an empty file that only the owner can read/write due to the umask
+touch secreto.txt
+# Create a private directory accessible only by the owner
+mkdir privado
+# Identify the current active user in the terminal
+whoami
+# Create a file named 'mi_archivo' and write "Hola" into it
+echo "Hola" > mi_archivo
+# Create a new user named 'luna', generate their home directory, and set ZSH as their default shell.
+useradd -m -s /usr/bin/zsh luna
+# Create a new user named 'luna' with a home directory and ZSH as the shell
+sudo useradd -m -s /usr/bin/zsh luna
+# Change the owner of 'mi_archivo' to the user named 'luna'
+chown luna mi_archivo
+# Transfer the ownership of 'mi_archivo' to the user 'luna'
+sudo chown luna mi_archivo
+# List details of 'mi_archivo' to verify its permissions and owner
+ls -l mi_archivo
+
 
 
