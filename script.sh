@@ -74,6 +74,39 @@ chown luna mi_archivo
 sudo chown luna mi_archivo
 # List details of 'mi_archivo' to verify its permissions and owner
 ls -l mi_archivo
+# List all the groups the current user 'codespace' belongs to
+groups
+ 1. Change the group ownership of the 'comun' directory to 'grupo_test'
+sudo chgrp grupo_test comun
 
+# 2. Attempt to add 'luna' to 'grupo_test' (this will fail without sudo)
+usermod -a -G grupo_test luna
+
+# 3. Add user 'luna' to 'grupo_test' with administrative privileges
+sudo usermod -aG grupo_test luna
+
+# 4. Attempt to change group ownership (requires sudo if you are not the owner or in the group)
+chgrp grupo_test comun
+
+# 5. List the details of the 'comun' directory to verify permissions
+ls -l comun
+
+# 6. Change both the owner to 'luna' and the group to 'grupo_test' for 'mi_archivo'
+sudo chown luna:grupo_test mi_archivo
+
+# 7. Verify the new owner and group settings for 'mi_archivo'
+ls -l mi_archivo
+
+# 8. Create a directory structure including a subdirectory at once
+mkdir -p proyecto/sub
+
+# 9. Create empty files in different locations within the new directory structure
+touch proyecto/readme proyecto/sub/datos
+
+# 10. Recursively change the owner to 'luna' and group to 'grupo_test' for the entire 'proyecto' folder
+sudo chown -R luna:grupo_test proyecto
+
+# 11. Recursively list all files and subdirectories within 'proyecto' to check their metadata
+ls -lR proyecto
 
 
