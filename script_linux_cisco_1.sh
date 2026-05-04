@@ -13,3 +13,4 @@ pwd # Print the current working directory path,This helps you know exactly where
 mkdir Documents # Create a new directory named Documents (Note the capital 'D')
 cd Documents # Change the current directory to Documents
 cd / # Change directory to the root of the file system,The '/' symbol represents the highest level in the Linux hierarchy
+mkdir -p School/Art # Create a nested directory structure (School and Art subfolder)
