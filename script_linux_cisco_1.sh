@@ -123,3 +123,4 @@ cat food.txt > newfile1.txt  # Redirect the output of cat to create a new file n
 cat newfile1.txt  # Verify the content of the newly created file
 echo "Hello"      # Print the string "Hello" to the standard output (terminal)
 echo "I like food." > newfile1.txt  # Overwrite the contents of newfile1.txt with a new string
+echo "This food is good." >> newfile1.txt  # Append text to the end of newfile1.txt without deleting existing content
