@@ -53,4 +53,5 @@ head -n 5 alpha.txt  # Display exactly the first 5 lines of the file
 tail -n 5 alpha.txt  # Display exactly the last 5 lines of the file
 cp /etc/passwd .  # Copy the system password file to the current directory
 ls  # List contents to verify that 'passwd' was successfully copied
+cd ~  # Return to the user's home directory
 
