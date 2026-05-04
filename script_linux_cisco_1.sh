@@ -44,6 +44,6 @@ sudo chown root hello.sh  # Change the file owner to the root user
 ls -l hello.sh  # Verify that the file owner has been successfully changed to root
 ./hello.sh  # Attempt to execute the script as a regular user after changing its owner to root
 sudo ./hello.sh  # Execute the script with root privileges using sudo
-
+echo -e "1 retriever\n2 badger\n3 bat\n4 wolf\n5 eagle" > animals.txt  # Create the animals.txt file with a list of animals
 
 
