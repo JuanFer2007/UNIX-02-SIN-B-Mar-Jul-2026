@@ -50,4 +50,5 @@ cat alpha.txt  # Display the full alphabet list to compare with head and tail co
 head alpha.txt  # Display the first 10 lines of the file
 tail alpha.txt  # Display the last 10 lines of the file
 head -n 5 alpha.txt  # Display exactly the first 5 lines of the file
+tail -n 5 alpha.txt  # Display exactly the last 5 lines of the file
 
