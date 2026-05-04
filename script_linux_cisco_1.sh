@@ -32,3 +32,5 @@ exit # Logout from the root session and return to the normal user
 sudo /usr/games/sl # Run the Steam Locomotive with sudo using its absolute path
 # Correct navigation to the Documents folder within the Codespace workspace
 cd /workspaces/UNIX-02-SIN-B-Mar-Jul-2026/Documents # Navigate to the project's Documents folder
+touch hello.sh  # Creates an empty file named hello.sh
+ls -l hello.sh  # Now this command will work and show the file details
