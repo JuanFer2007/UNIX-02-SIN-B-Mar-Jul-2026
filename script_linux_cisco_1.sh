@@ -106,3 +106,8 @@ ps -ef       # Display all running processes in full-format listing, including p
 sudo apt-get update  # Update the local index of available software packages from repositories
 apt-cache search cow  # Search the package database for any software related to 'cow'
 sudo apt-get install cowsay -y  # Download and install the cowsay utility (added -y to auto-confirm)
+# Attempt to run cowsay (Often fails in Codespaces because /usr/games is not in the PATH)
+# cowsay 'NDG Linux Unhatched'
+
+# Correct way to run it in this environment using the absolute path:
+/usr/games/cowsay 'NDG Linux Unhatched'  # Run cowsay using its full path to see the cow message
