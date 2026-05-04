@@ -99,3 +99,4 @@ shutdown 01:51  # Schedule a shutdown at a specific time (HH:MM)
 shutdown +1 "Goodbye World!" # Schedule shutdown in 1 minute with a broadcast message
 ifconfig      # Display active network interfaces and IP addresses (Legacy command)
 ping -c 4 192.168.1.2  # Test network connectivity by sending 4 packets to a specific IP
+ping -c 4 192.168.1.3  # Test connectivity to another specific local IP address
