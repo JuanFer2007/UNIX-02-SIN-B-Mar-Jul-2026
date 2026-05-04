@@ -42,6 +42,8 @@ echo -e '#!/bin/bash\necho "----------------"\necho "( Hello World! )"\necho "--
 ls -l  # List long format to verify permissions, size, and modification date of files
 sudo chown root hello.sh  # Change the file owner to the root user
 ls -l hello.sh  # Verify that the file owner has been successfully changed to root
+./hello.sh  # Attempt to execute the script as a regular user after changing its owner to root
+sudo ./hello.sh  # Execute the script with root privileges using sudo
 
 
 
