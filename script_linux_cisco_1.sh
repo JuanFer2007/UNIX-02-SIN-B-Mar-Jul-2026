@@ -117,4 +117,6 @@ passwd  #Command used to change the current user's password
 passwd -S sysadmin  # Display the password status for the user 'sysadmin'
 su root      # Attempt to switch to the root user (Requires a password; fails in Codespaces)
 passwd sysadmin  # Change the password for the specific user 'sysadmin'
+echo -e "pizza\nburgers\ntacos\nsushi\napples" > food.txt  # Create food.txt for practice
+cat food.txt  # Display the contents of the food.txt file
 
