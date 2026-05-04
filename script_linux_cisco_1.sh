@@ -51,4 +51,5 @@ head alpha.txt  # Display the first 10 lines of the file
 tail alpha.txt  # Display the last 10 lines of the file
 head -n 5 alpha.txt  # Display exactly the first 5 lines of the file
 tail -n 5 alpha.txt  # Display exactly the last 5 lines of the file
+cp /etc/passwd .  # Copy the system password file to the current directory
 
