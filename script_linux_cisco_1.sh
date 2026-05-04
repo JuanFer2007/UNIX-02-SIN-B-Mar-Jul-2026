@@ -23,3 +23,5 @@ ls -lt /var/log # List log files in long format, sorted by modification time (ne
 ls -l -S /var/log # List logs in long format, sorted by file size (largest first)
 ls -lSr /var/log  # List logs in long format, sorted by size in reverse order (smallest first)
 ls -r /var/log  # List log file names in reverse alphabetical order
+su -      # Standard command to switch to root (Fails in Codespaces due to security restrictions)
+sudo -i   # Workaround for Codespaces: Gain a root shell using sudo privileges without a password
