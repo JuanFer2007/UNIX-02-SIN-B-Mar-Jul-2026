@@ -95,3 +95,4 @@ grep 'e*' red.txt  # Matches zero or more occurrences of 'e' (highlights 'e' but
 grep 'ee*' red.txt  # Search for lines containing at least one 'e' character
 shutdown now  # Command to power off the system immediately (Fails in Codespaces/Containers)
 date # Display the current system date and time
+shutdown 01:51  # Schedule a shutdown at a specific time (HH:MM)
