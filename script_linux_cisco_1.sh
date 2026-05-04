@@ -55,4 +55,4 @@ cp /etc/passwd .  # Copy the system password file to the current directory
 ls  # List contents to verify that 'passwd' was successfully copied
 cd ~  # Return to the user's home directory
 dd if=/dev/zero of=/tmp/swapex bs=1M count=50  # Create a 50MB file filled with zeros in the /tmp directory
-
+touch people.csv  # Create the missing file for the exercise
