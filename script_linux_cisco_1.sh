@@ -114,4 +114,5 @@ sudo apt-get install cowsay -y  # Download and install the cowsay utility (added
 sudo apt-get update  # Resynchronize the package index files from their sources
 sudo apt-get purge cowsay -y  # Completely remove cowsay and all its configuration files
 passwd  #Command used to change the current user's password
- 
+passwd -S sysadmin  # Display the password status for the user 'sysadmin'
+
