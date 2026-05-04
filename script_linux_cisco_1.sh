@@ -119,4 +119,5 @@ su root      # Attempt to switch to the root user (Requires a password; fails in
 passwd sysadmin  # Change the password for the specific user 'sysadmin'
 echo -e "pizza\nburgers\ntacos\nsushi\napples" > food.txt  # Create food.txt for practice
 cat food.txt  # Display the contents of the food.txt file
+cat food.txt > newfile1.txt  # Redirect the output of cat to create a new file named newfile1.txt
 
