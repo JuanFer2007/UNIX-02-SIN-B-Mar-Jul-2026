@@ -41,6 +41,7 @@ echo -e '#!/bin/bash\necho "----------------"\necho "( Hello World! )"\necho "--
 ./hello.sh  # Run the hello.sh script and display the "Hello World" message with the penguin
 ls -l  # List long format to verify permissions, size, and modification date of files
 sudo chown root hello.sh  # Change the file owner to the root user
+ls -l hello.sh  # Verify that the file owner has been successfully changed to root
 
 
 
