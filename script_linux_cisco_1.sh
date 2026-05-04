@@ -116,4 +116,5 @@ sudo apt-get purge cowsay -y  # Completely remove cowsay and all its configurati
 passwd  #Command used to change the current user's password
 passwd -S sysadmin  # Display the password status for the user 'sysadmin'
 su root      # Attempt to switch to the root user (Requires a password; fails in Codespaces)
+passwd sysadmin  # Change the password for the specific user 'sysadmin'
 
