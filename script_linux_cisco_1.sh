@@ -27,3 +27,4 @@ su -      # Standard command to switch to root (Fails in Codespaces due to secur
 sudo -i   # Workaround for Codespaces: Gain a root shell using sudo privileges without a password
 apt install sl -y  # Install the Steam Locomotive command (requires root)
 sl  # Run a train across the terminal (a joke for typing 'ls' incorrectly)
+/usr/games/sl  # Run the Steam Locomotive using its absolute path in Ubuntu/Codespaces
