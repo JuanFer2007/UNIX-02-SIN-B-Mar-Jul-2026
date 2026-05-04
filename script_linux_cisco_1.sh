@@ -1,2 +1,4 @@
 ls #List the contents of the current directory
 ls Documents #List the contents of a specific directory (documents)
+sudo apt update && sudo apt install aptitude -y # Install the aptitude package manager automatically (-y)
+aptitude moo # Execute the aptitude moo command to find hidden Easter Eggs
