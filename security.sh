@@ -6,3 +6,5 @@ groups $USER              # Shows the groups for the specific username stored in
 cat /etc/group | grep users # Filters the groups file to show only lines containing "users"
 cat /etc/group              # Displays the entire list of groups defined in the system
 cat /etc/gshadow            # Displays the secure group file (contains encrypted group passwords)
+mkdir ~/proyecto_unix/    # Creates a new directory named "proyecto_unix" in the home folder
+ls -la ~/proyecto_unix/   # Lists all files in the directory, including hidden ones, in long format
