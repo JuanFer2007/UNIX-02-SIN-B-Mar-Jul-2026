@@ -77,3 +77,6 @@ echo -e "A is for Apple\nB is for Bear\nC is for Cat" > alpha-first.txt  # Creat
 catgrep 'r$' alpha-first.txt  # Search for lines that END with the letter 'r'
  alpha-first.txt  # Display the contents of alpha-first.txt
 grep 'r$' alpha-first.txt  # Search for lines that END with the letter 'r'
+echo "Roses are red" > red.txt  # Create red.txt to practice output redirection
+cat red.txt                     # Display the contents of red.txt
+
