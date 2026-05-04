@@ -19,3 +19,4 @@ cd .. # Move up one level in the directory hierarchy (to the parent directory)
 cd ~ # This is a universal shortcut for the current user's home folder
 ls # List contents of the home directory to verify the current location
 ls -l /var/log/ # List contents of the system log directory using a long format,This uses an absolute path to view system activity files
+ls -lt /var/log # List log files in long format, sorted by modification time (newest first),This is essential for troubleshooting recent system events
