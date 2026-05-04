@@ -83,3 +83,5 @@ grep 'r..f' red.txt  # Search for a 4-letter pattern starting with 'r', ending w
 grep 'r..d' red.txt  # Search for a 4-character pattern starting with 'r' and ending with 'd'
 grep '....' red.txt  # Search for any sequence of exactly four characters
 grep 'r..t' /etc/passwd  # Search for a 4-character pattern starting with 'r' and ending with 't' in the system password file
+echo -e "Joe Smith\nJane Doe\nJohn Doe\nBob Brown" > profile.txt  # Create profile.txt to practice character classes
+cat profile.txt                                                # Display the contents of profile.txt
