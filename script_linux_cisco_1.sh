@@ -35,3 +35,4 @@ cd /workspaces/UNIX-02-SIN-B-Mar-Jul-2026/Documents # Navigate to the project's 
 touch hello.sh  # Creates an empty file named hello.sh
 ls -l hello.sh  # Now this command will work and show the file details
 ./hello.sh   # Runs the script (it will be empty for now)
+chmod u+x hello.sh  # Grant execution permission only to the owner (user) of the file
