@@ -74,4 +74,6 @@ grep sysadmin passwd  # Search for the string 'sysadmin' inside the passwd file
 grep 'root' passwd  # grep '^root' /etc/passwd  # Search for lines that START with the string 'root'
 grep '^root' /etc/passwd  # Search for lines that START with the string 'root'
 echo -e "A is for Apple\nB is for Bear\nC is for Cat" > alpha-first.txt  # Create alpha-first.txt for redirection practice
-cat alpha-first.txt  # Display the contents of alpha-first.txt
+catgrep 'r$' alpha-first.txt  # Search for lines that END with the letter 'r'
+ alpha-first.txt  # Display the contents of alpha-first.txt
+grep 'r$' alpha-first.txt  # Search for lines that END with the letter 'r'
