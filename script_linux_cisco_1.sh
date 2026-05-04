@@ -111,3 +111,4 @@ sudo apt-get install cowsay -y  # Download and install the cowsay utility (added
 
 # Correct way to run it in this environment using the absolute path:
 /usr/games/cowsay 'NDG Linux Unhatched'  # Run cowsay using its full path to see the cow message
+sudo apt-get update  # Resynchronize the package index files from their sources
