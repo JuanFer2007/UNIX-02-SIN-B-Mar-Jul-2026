@@ -81,4 +81,5 @@ echo "Roses are red" > red.txt  # Create red.txt to practice output redirection
 cat red.txt                     # Display the contents of red.txt
 grep 'r..f' red.txt  # Search for a 4-letter pattern starting with 'r', ending with 'f', and any two characters in between
 grep 'r..d' red.txt  # Search for a 4-character pattern starting with 'r' and ending with 'd'
+grep '....' red.txt  # Search for any sequence of exactly four characters
 
