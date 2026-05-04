@@ -71,4 +71,5 @@ rm -r Work  # Remove the 'Work' directory and all its contents recursively
 ls Work  # Verify that the 'Work' directory and its contents were deleted
 cp /etc/passwd .  # Copy the system password file to the current directory again for practice
 grep sysadmin passwd  # Search for the string 'sysadmin' inside the passwd file
-grep 'root' passwd  # Search for the string 'root' in the passwd file using quotes
+grep 'root' passwd  # grep '^root' /etc/passwd  # Search for lines that START with the string 'root'
+grep '^root' /etc/passwd  # Search for lines that START with the string 'root'
