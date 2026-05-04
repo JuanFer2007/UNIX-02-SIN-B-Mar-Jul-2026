@@ -86,3 +86,4 @@ grep 'r..t' /etc/passwd  # Search for a 4-character pattern starting with 'r' an
 echo -e "Joe Smith\nJane Doe\nJohn Doe\nBob Brown" > profile.txt  # Create profile.txt to practice character classes
 cat profile.txt                                                # Display the contents of profile.txt
 grep '[0-9]' profile.txt  # grep '[^0-9]' profile.txt  # Search for any character that is NOT a numeric digit
+grep '[.]' profile.txt  # Search for a literal dot character (inside brackets, the dot loses its wildcard power)
