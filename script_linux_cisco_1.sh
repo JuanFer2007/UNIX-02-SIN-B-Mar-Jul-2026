@@ -100,3 +100,4 @@ shutdown +1 "Goodbye World!" # Schedule shutdown in 1 minute with a broadcast me
 ifconfig      # Display active network interfaces and IP addresses (Legacy command)
 ping -c 4 192.168.1.2  # Test network connectivity by sending 4 packets to a specific IP
 ping -c 4 192.168.1.3  # Test connectivity to another specific local IP address
+ps      # Display processes running in the current terminal session
