@@ -17,3 +17,4 @@ mkdir -p School/Art # Create a nested directory structure (School and Art subfol
 cd School/Art # Navigate into the nested directory
 cd .. # Move up one level in the directory hierarchy (to the parent directory)
 cd ~ # This is a universal shortcut for the current user's home folder
+ls # List contents of the home directory to verify the current location
