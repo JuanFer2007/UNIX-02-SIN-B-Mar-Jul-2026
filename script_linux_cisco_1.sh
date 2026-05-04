@@ -58,3 +58,4 @@ dd if=/dev/zero of=/tmp/swapex bs=1M count=50  # Create a 50MB file filled with 
 touch people.csv  # Create the missing file for the exercise
 mkdir Work  # Create the destination directory
 mv people.csv Work # Move the file into the Work folder
+ls Work  # List the contents of the Work directory to verify the move
