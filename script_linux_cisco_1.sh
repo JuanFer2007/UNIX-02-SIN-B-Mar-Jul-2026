@@ -94,3 +94,4 @@ grep 'z*' red.txt  # Search for zero or more occurrences of 'z' (matches every l
 grep 'e*' red.txt  # Matches zero or more occurrences of 'e' (highlights 'e' but shows all lines)
 grep 'ee*' red.txt  # Search for lines containing at least one 'e' character
 shutdown now  # Command to power off the system immediately (Fails in Codespaces/Containers)
+date # Display the current system date and time
