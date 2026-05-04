@@ -39,6 +39,8 @@ chmod u+x hello.sh  # Grant execution permission only to the owner (user) of the
 ls -l hello.sh  # Verify that the execution permission 'x' was successfully added to the owner
 echo -e '#!/bin/bash\necho "----------------"\necho "( Hello World! )"\necho "----------------"\necho " \\ "\necho " \\ "\necho " <(^)"\necho " ( )"' > hello.sh  # Use echo to write the script header (shebang) and ASCII art into hello.sh
 ./hello.sh  # Run the hello.sh script and display the "Hello World" message with the penguin
+ls -l  # List long format to verify permissions, size, and modification date of files
+sudo chown root hello.sh  # Change the file owner to the root user
 
 
 
