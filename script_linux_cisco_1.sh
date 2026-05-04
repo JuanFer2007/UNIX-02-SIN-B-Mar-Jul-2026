@@ -93,4 +93,4 @@ grep 'r[oe]*d' red.txt  # Search for 'r', followed by any number of 'o' or 'e' c
 grep 'z*' red.txt  # Search for zero or more occurrences of 'z' (matches every line in the file)
 grep 'e*' red.txt  # Matches zero or more occurrences of 'e' (highlights 'e' but shows all lines)
 grep 'ee*' red.txt  # Search for lines containing at least one 'e' character
-
+shutdown now  # Command to power off the system immediately (Fails in Codespaces/Containers)
