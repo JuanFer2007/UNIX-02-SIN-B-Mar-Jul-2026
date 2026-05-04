@@ -57,3 +57,4 @@ cd ~  # Return to the user's home directory
 dd if=/dev/zero of=/tmp/swapex bs=1M count=50  # Create a 50MB file filled with zeros in the /tmp directory
 touch people.csv  # Create the missing file for the exercise
 mkdir Work  # Create the destination directory
+mv people.csv Work # Move the file into the Work folder
