@@ -102,3 +102,4 @@ ping -c 4 192.168.1.2  # Test network connectivity by sending 4 packets to a spe
 ping -c 4 192.168.1.3  # Test connectivity to another specific local IP address
 ps      # Display processes running in the current terminal session
 ps -e        # Display every process currently running on the entire system
+ps -ef       # Display all running processes in full-format listing, including parent IDs
