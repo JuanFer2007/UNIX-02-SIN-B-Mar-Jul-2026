@@ -66,3 +66,4 @@ mv numbers.txt letters.txt alpha.txt School # Move multiple files into the Schoo
 ls  # List contents to confirm that the moved files are no longer in the current directory
 touch linux.txt  # Create a temporary file to demonstrate the remove command
 rm linux.txt     # Remove the file linux.txt from the current directory
+ls linux.txt  # Verify that the file 'linux.txt' was successfully deleted
