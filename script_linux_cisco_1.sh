@@ -10,3 +10,4 @@ aptitude -v moo # Increase verbosity (-v) to ask aptitude again for Easter Eggs,
 aptitude -vv moo # Further increase verbosity (-vv) to continue the search for Easter Eggs,The program starts to get annoyed with our persistence
 aptitude -vvv moo # Triple verbosity (-vvv). The program is now losing its patience with us.
 pwd # Print the current working directory path,This helps you know exactly where you are in the file system
+mkdir Documents # Create a new directory named Documents (Note the capital 'D')
