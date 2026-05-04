@@ -88,3 +88,5 @@ cat profile.txt                                                # Display the con
 grep '[0-9]' profile.txt  # grep '[^0-9]' profile.txt  # Search for any character that is NOT a numeric digit
 grep '[.]' profile.txt  # Search for a literal dot character (inside brackets, the dot loses its wildcard power)
 cat red.txt  # Display the final content of red.txt to verify its structure
+grep 're*d' red.txt  # Search for 'r', followed by zero or more 'e' characters, and then 'd'
+
