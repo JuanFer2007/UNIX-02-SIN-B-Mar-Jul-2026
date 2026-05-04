@@ -103,3 +103,4 @@ ping -c 4 192.168.1.3  # Test connectivity to another specific local IP address
 ps      # Display processes running in the current terminal session
 ps -e        # Display every process currently running on the entire system
 ps -ef       # Display all running processes in full-format listing, including parent IDs
+sudo apt-get update  # Update the local index of available software packages from repositories
