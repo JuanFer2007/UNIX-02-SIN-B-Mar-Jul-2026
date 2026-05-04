@@ -105,3 +105,4 @@ ps -e        # Display every process currently running on the entire system
 ps -ef       # Display all running processes in full-format listing, including parent IDs
 sudo apt-get update  # Update the local index of available software packages from repositories
 apt-cache search cow  # Search the package database for any software related to 'cow'
+sudo apt-get install cowsay -y  # Download and install the cowsay utility (added -y to auto-confirm)
