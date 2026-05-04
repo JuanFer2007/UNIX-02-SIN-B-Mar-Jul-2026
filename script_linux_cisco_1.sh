@@ -59,3 +59,4 @@ touch people.csv  # Create the missing file for the exercise
 mkdir Work  # Create the destination directory
 mv people.csv Work # Move the file into the Work folder
 ls Work  # List the contents of the Work directory to verify the move
+touch numbers.txt letters.txt  # Create the missing files for the multiple move exercise
