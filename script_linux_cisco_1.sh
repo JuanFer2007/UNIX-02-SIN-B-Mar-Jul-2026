@@ -63,3 +63,4 @@ touch numbers.txt letters.txt  # Create the missing files for the multiple move 
 touch numbers.txt letters.txt alpha.txt     # Ensure all three files exist before moving them
 mkdir -p School                             # Create the School directory if it doesn't exist
 mv numbers.txt letters.txt alpha.txt School # Move multiple files into the School directory at once
+ls  # List contents to confirm that the moved files are no longer in the current directory
