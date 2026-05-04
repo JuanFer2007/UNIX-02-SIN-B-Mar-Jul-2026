@@ -1,5 +1,1 @@
-pizza
-burgers
-tacos
-sushi
-apples
+I like food.
