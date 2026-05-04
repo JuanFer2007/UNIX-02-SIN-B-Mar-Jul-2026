@@ -28,3 +28,4 @@ sudo -i   # Workaround for Codespaces: Gain a root shell using sudo privileges w
 apt install sl -y  # Install the Steam Locomotive command (requires root)
 sl  # Run a train across the terminal (a joke for typing 'ls' incorrectly)
 /usr/games/sl  # Run the Steam Locomotive using its absolute path in Ubuntu/Codespaces
+exit # Logout from the root session and return to the normal user
