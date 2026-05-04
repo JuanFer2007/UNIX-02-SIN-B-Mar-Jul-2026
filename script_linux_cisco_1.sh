@@ -34,3 +34,4 @@ sudo /usr/games/sl # Run the Steam Locomotive with sudo using its absolute path
 cd /workspaces/UNIX-02-SIN-B-Mar-Jul-2026/Documents # Navigate to the project's Documents folder
 touch hello.sh  # Creates an empty file named hello.sh
 ls -l hello.sh  # Now this command will work and show the file details
+./hello.sh   # Runs the script (it will be empty for now)
