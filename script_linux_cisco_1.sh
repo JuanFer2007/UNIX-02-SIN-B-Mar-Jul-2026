@@ -22,3 +22,4 @@ ls -l /var/log/ # List contents of the system log directory using a long format,
 ls -lt /var/log # List log files in long format, sorted by modification time (newest first),This is essential for troubleshooting recent system events
 ls -l -S /var/log # List logs in long format, sorted by file size (largest first)
 ls -lSr /var/log  # List logs in long format, sorted by size in reverse order (smallest first)
+ls -r /var/log  # List log file names in reverse alphabetical order
