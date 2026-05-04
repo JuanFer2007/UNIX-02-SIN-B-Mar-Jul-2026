@@ -47,4 +47,5 @@ sudo ./hello.sh  # Execute the script with root privileges using sudo
 echo -e "1 retriever\n2 badger\n3 bat\n4 wolf\n5 eagle" > animals.txt  # Create the animals.txt file with a list of animals
 cat animals.txt  # Display the content of the animals.txt file in the terminal
 cat alpha.txt  # Display the full alphabet list to compare with head and tail commands
+head alpha.txt  # Display the first 10 lines of the file
 
