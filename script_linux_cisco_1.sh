@@ -87,3 +87,4 @@ echo -e "Joe Smith\nJane Doe\nJohn Doe\nBob Brown" > profile.txt  # Create profi
 cat profile.txt                                                # Display the contents of profile.txt
 grep '[0-9]' profile.txt  # grep '[^0-9]' profile.txt  # Search for any character that is NOT a numeric digit
 grep '[.]' profile.txt  # Search for a literal dot character (inside brackets, the dot loses its wildcard power)
+cat red.txt  # Display the final content of red.txt to verify its structure
