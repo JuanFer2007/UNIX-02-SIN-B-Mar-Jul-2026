@@ -60,3 +60,6 @@ mkdir Work  # Create the destination directory
 mv people.csv Work # Move the file into the Work folder
 ls Work  # List the contents of the Work directory to verify the move
 touch numbers.txt letters.txt  # Create the missing files for the multiple move exercise
+touch numbers.txt letters.txt alpha.txt     # Ensure all three files exist before moving them
+mkdir -p School                             # Create the School directory if it doesn't exist
+mv numbers.txt letters.txt alpha.txt School # Move multiple files into the School directory at once
