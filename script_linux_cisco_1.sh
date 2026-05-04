@@ -113,4 +113,5 @@ sudo apt-get install cowsay -y  # Download and install the cowsay utility (added
 /usr/games/cowsay 'NDG Linux Unhatched'  # Run cowsay using its full path to see the cow message
 sudo apt-get update  # Resynchronize the package index files from their sources
 sudo apt-get purge cowsay -y  # Completely remove cowsay and all its configuration files
-
+passwd  #Command used to change the current user's password
+ 
