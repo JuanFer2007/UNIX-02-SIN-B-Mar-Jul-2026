@@ -9,3 +9,4 @@ ls -rl # List directory contents in long format and reverse order using combined
 aptitude -v moo # Increase verbosity (-v) to ask aptitude again for Easter Eggs,This is part of a progressive joke in the aptitude package manager
 aptitude -vv moo # Further increase verbosity (-vv) to continue the search for Easter Eggs,The program starts to get annoyed with our persistence
 aptitude -vvv moo # Triple verbosity (-vvv). The program is now losing its patience with us.
+pwd # Print the current working directory path,This helps you know exactly where you are in the file system
