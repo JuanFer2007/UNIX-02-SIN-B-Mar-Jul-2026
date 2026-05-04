@@ -25,3 +25,4 @@ ls -lSr /var/log  # List logs in long format, sorted by size in reverse order (s
 ls -r /var/log  # List log file names in reverse alphabetical order
 su -      # Standard command to switch to root (Fails in Codespaces due to security restrictions)
 sudo -i   # Workaround for Codespaces: Gain a root shell using sudo privileges without a password
+apt install sl -y  # Install the Steam Locomotive command (requires root)
