@@ -68,3 +68,4 @@ touch linux.txt  # Create a temporary file to demonstrate the remove command
 rm linux.txt     # Remove the file linux.txt from the current directory
 ls linux.txt  # Verify that the file 'linux.txt' was successfully deleted
 rm -r Work  # Remove the 'Work' directory and all its contents recursively
+ls Work  # Verify that the 'Work' directory and its contents were deleted
