@@ -120,4 +120,4 @@ passwd sysadmin  # Change the password for the specific user 'sysadmin'
 echo -e "pizza\nburgers\ntacos\nsushi\napples" > food.txt  # Create food.txt for practice
 cat food.txt  # Display the contents of the food.txt file
 cat food.txt > newfile1.txt  # Redirect the output of cat to create a new file named newfile1.txt
-
+cat newfile1.txt  # Verify the content of the newly created file
