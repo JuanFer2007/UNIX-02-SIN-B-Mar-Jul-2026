@@ -30,3 +30,5 @@ sl  # Run a train across the terminal (a joke for typing 'ls' incorrectly)
 /usr/games/sl  # Run the Steam Locomotive using its absolute path in Ubuntu/Codespaces
 exit # Logout from the root session and return to the normal user
 sudo /usr/games/sl # Run the Steam Locomotive with sudo using its absolute path
+# Correct navigation to the Documents folder within the Codespace workspace
+cd /workspaces/UNIX-02-SIN-B-Mar-Jul-2026/Documents # Navigate to the project's Documents folder
