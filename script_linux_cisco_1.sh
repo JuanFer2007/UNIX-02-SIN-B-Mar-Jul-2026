@@ -89,4 +89,5 @@ grep '[0-9]' profile.txt  # grep '[^0-9]' profile.txt  # Search for any characte
 grep '[.]' profile.txt  # Search for a literal dot character (inside brackets, the dot loses its wildcard power)
 cat red.txt  # Display the final content of red.txt to verify its structure
 grep 're*d' red.txt  # Search for 'r', followed by zero or more 'e' characters, and then 'd'
+grep 'r[oe]*d' red.txt  # Search for 'r', followed by any number of 'o' or 'e' characters, ending in 'd'
 
