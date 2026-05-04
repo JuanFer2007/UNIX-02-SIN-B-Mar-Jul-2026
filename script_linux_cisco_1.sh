@@ -12,3 +12,4 @@ aptitude -vvv moo # Triple verbosity (-vvv). The program is now losing its patie
 pwd # Print the current working directory path,This helps you know exactly where you are in the file system
 mkdir Documents # Create a new directory named Documents (Note the capital 'D')
 cd Documents # Change the current directory to Documents
+cd / # Change directory to the root of the file system,The '/' symbol represents the highest level in the Linux hierarchy
