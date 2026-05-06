@@ -74,3 +74,7 @@ touch ~/lab_chgrp/projects/config.json
 touch ~/lab_chgrp/reports/report.txt
 touch ~/lab_chgrp/scripts/deploy.sh
 ls $HOME
+# Change the group of the file app.py
+sudo chgrp desarrolladores ~/lab_chgrp/proyectos/app.py
+# Verify the change (check the group column)
+ls -la ~/lab_chgrp/proyectos
