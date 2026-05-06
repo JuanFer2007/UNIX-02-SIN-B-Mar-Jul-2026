@@ -41,3 +41,14 @@ id
 sudo usermod -aG desarrolladores $(whoami)
 sudo usermod -aG diseno $(whoami)
 #$(whoami) is a subshell command that returns the name of the current user
+#CRITICAL: The -a (append) flag is essential.
+#Without -a, usermod REPLACES all user groups.
+#With -a, it ADDS the user to the group while preserving existing ones.
+# Verify changes in /etc/group
+grep "desarrolladores\|diseno" /etc/group
+# Add user to group with adduser (high level,
+Debian)
+sudo adduser SUSER marketing
+# View current status
+id $(whoami)
+grep $(whoami) /etc/group
