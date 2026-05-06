@@ -28,3 +28,9 @@ grep "GID _MINI\|GID_MAX\|SYS_GID" /etc/login.defs
 #SYS_GID_MAX = 999
 #GID_MIN = 1000
 #GID_MAX = 600000
+# addgroup [options] group_name
+# Create groups with addgroup
+sudo addgroup diseno
+sudo addgroup --gid 2100 marketing sudo addgroup --system cache_web
+# Verify
+grep "diseno\/marketing \|cache_web"/etc/group
