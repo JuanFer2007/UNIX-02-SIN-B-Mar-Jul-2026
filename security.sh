@@ -84,3 +84,11 @@ sudo chgrp diseno ~/lab_chgrp/proyectos/config.json ~/lab_chgrp/reportes/informe
 # Verify changes in both directories
 ls -la ~/lab_chgrp/proyectos/
 ls -la ~/lab_chgrp/reportes/
+# Recursively change the group of an entire directory
+sudo chgrp -R desarrolladores ~/lab_chgrp/scripts/
+
+# Verify the changes recursively (check the group column)
+ls -laR ~/lab_chgrp/scripts/
+
+# Verbose mode to see exactly what is being changed
+sudo chgrp -Rv diseno ~/lab_chgrp/reportes/
