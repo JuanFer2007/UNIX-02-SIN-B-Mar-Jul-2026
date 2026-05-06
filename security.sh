@@ -66,3 +66,11 @@ id root #He lost all the other groups
 # Restore
 usermod -aG diseno,marketing,grupo_temporal root
 id root #Restored
+# Create the folder structure
+mkdir -p ~/lab_chgrp/projects ~/lab_chgrp/reports ~/lab_chgrp/scripts
+# Create the files inside the folders
+touch ~/lab_chgrp/projects/app.py
+touch ~/lab_chgrp/projects/config.json
+touch ~/lab_chgrp/reports/report.txt
+touch ~/lab_chgrp/scripts/deploy.sh
+ls $HOME
