@@ -34,3 +34,10 @@ sudo addgroup diseno
 sudo addgroup --gid 2100 marketing sudo addgroup --system cache_web
 # Verify
 grep "diseno\/marketing \|cache_web"/etc/group
+#See which groups the current user belongs to
+groups
+id
+# Add user to a group with usermod (low level)
+sudo usermod -aG desarrolladores $(whoami)
+sudo usermod -aG diseno $(whoami)
+#$(whoami) is a subshell command that returns the name of the current user
