@@ -8,3 +8,10 @@ cat /etc/group              # Displays the entire list of groups defined in the 
 cat /etc/gshadow            # Displays the secure group file (contains encrypted group passwords)
 mkdir ~/proyecto_unix/    # Creates a new directory named "proyecto_unix" in the home folder
 ls -la ~/proyecto_unix/   # Lists all files in the directory, including hidden ones, in long format
+#groupadd [opciones] nombre _grupo
+# Crear un grupo simple
+sudo groupadd desarrolladores
+sudo groupadd -g 2000 operaciones
+# GID específico
+# grupo de sistema (GID < 1000)
+sudo groupadd --system servicios_web
