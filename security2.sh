@@ -38,3 +38,10 @@ exit
 # Verify that we returned to the original group
 id -gn
 echo "Grupo restaurado: $(id -gn)"
+
+addgroup, groupadd, chgrp, newgrp
+# newgrp creates a subshell - this can be demonstrated
+echo "PID del shell actual: $$"
+newgrp desarrolladores
+echo "PID dentro de newgrp: $$"
+# The PID is different - it is a child process
