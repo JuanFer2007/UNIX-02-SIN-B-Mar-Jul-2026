@@ -24,3 +24,10 @@ newgrp desarrolladores
 id -gn
 echo "New active group: $(id -gn)"
 
+# Create a file inside the subshell
+touch ~/dentro_de_newgrp.txt
+ls -la ~/dentro_de_newgrp.txt
+# The group is now "desarrolladores"
+# Create a directory
+mkdir -p ~/proyecto_dev/src
+ls -la ~/
