@@ -51,3 +51,13 @@ addgroup, groupadd, chgrp, newgrp
 sudo groupadd grupo_restringido
 sudo gpasswd grupo_restringido
 # The system will prompt for a group password
+
+addgroup, groupadd, chgrp, newgrp
+# A user who does NOT belong to the group can
+# join temporarily if they know the password
+newgrp grupo_restringido
+# The system will prompt for the group password
+# temporarily
+# If the password is correct, they join
+id -gn
+exit # Upon exiting, the temporary membership is lost
