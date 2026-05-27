@@ -31,3 +31,10 @@ ls -la ~/dentro_de_newgrp.txt
 # Create a directory
 mkdir -p ~/proyecto_dev/src
 ls -la ~/
+
+# 'proyecto_dev/' is now owned by the 'desarrolladores' group
+# Exit the newgrp subshell
+exit
+# Verify that we returned to the original group
+id -gn
+echo "Grupo restaurado: $(id -gn)"
