@@ -12,8 +12,8 @@ set +x
 + ls -l mydirectory # Debug output: lists the contents of the target directory in long format.
 total 0 # Command output: shows that the total block storage size used by the listed files is zero.
 -rw-rw-rw- 1 root root 0 jun  1 13:25 myfile # Command output: shows permissions, owner, size, date, and name of the created file.
-[Juan-Pindo] UNIX-02-SIN-B-Mar-Jul-2026 ✓ $ #bash -n blackhatbash2.sh # Checks the script for syntax errors and returns no output because the code is valid.
-[Juan-Pindo] UNIX-02-SIN-B-Mar-Jul-2026 ✓ $ #bash blackhatbash2.sh # Executes the script normally, which triggers the internal debug mode configuration.
+#[Juan-Pindo] UNIX-02-SIN-B-Mar-Jul-2026 ✓ $ #bash -n blackhatbash2.sh # Checks the script for syntax errors and returns no output because the code is valid.
+#[Juan-Pindo] UNIX-02-SIN-B-Mar-Jul-2026 ✓ $ #bash blackhatbash2.sh # Executes the script normally, which triggers the internal debug mode configuration.
 + mkdir -p mydirectory # Debug output: safely verifies or creates the directory again during normal execution.
 + touch mydirectory/myfile # Debug output: updates the file modification time to the current timestamp.
 + ls -l mydirectory # Debug output: runs the long listing command to verify the folder status.
