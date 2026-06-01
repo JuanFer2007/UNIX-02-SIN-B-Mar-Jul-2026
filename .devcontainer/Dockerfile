@@ -216,16 +216,21 @@ RUN git config --system --add safe.directory '*' \
 Run chsh -s /usr/bin/zsh root
 
 # Prompt instirucional para los y las estudiantes del curso
-RUN cat >> /root/.zshrc <<'EOF'
-#Carga colores para Zsh
-autoload -U colors && colors
-
-# ===== Valida si un comando fue ejecutado correctamente =====
-PROMPT='%F{cyan}[Juan-Pindo]%f %F{yellow}%1~%f %(?.%F{green}➜.%F{red}✘)%f %# '
+RUN cat >> /root/.bashrc <<'EOF'
+__set_prompt() {
+    local ec=$?
+    local mark
+    if [ $ec -eq 0 ]; then
+        mark='\[\e[32m\]✓\[\e[0m\]'
+    else
+        mark="\[\e[31m\]✗ $ec\[\e[0m\]"
+    fi
+    PS1="\[\e[36m\][Juan-Pindo]\[\e[0m\] \[\e[33m\]\W\[\e[0m\] $mark \$ "
+}
+PROMPT_COMMAND=__set_prompt
 EOF
+CMD ["/bin/bash"]
 
-
-CMD ["/usr/bin/zsh"]
 
 
 
