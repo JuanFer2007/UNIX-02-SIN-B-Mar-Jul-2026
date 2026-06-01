@@ -213,7 +213,7 @@ RUN git config --system --add safe.directory '*' \
 
 # Cambiar shell de login de root a zsh dentro de la imagen
 # para que chsh ya no haga falta y todo sea consiente
-Run chsh -s /usr/bin/zsh root
+Run chsh -s /usr/bin/bash root
 
 # Prompt instirucional para los y las estudiantes del curso
 RUN cat >> /root/.bashrc <<'EOF'
