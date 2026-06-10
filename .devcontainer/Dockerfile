@@ -1,150 +1,107 @@
 # ============================================================================
-#  Dockerfile — "receta" para construir la imagen del curso
+# BLOCK A & B: Base Image and Layer Caching Strategy
 # ============================================================================
-#  Un Dockerfile es un archivo de texto con instrucciones paso a paso que
-#  Docker (o Codespaces) lee de arriba hacia abajo para fabricar una
-#  "imagen". Una imagen es como un molde congelado de un sistema Linux
-#  listo para usar; cada vez que abres el Codespace, se crea un
-#  "contenedor" a partir de ese molde.
+# A Dockerfile is a step-by-step recipe used to build a container image, 
+# which acts as a blueprint for our environment (Docker concepts - BHB Ch.3).
 #
-#  Analogía: la imagen es el PLANO, el contenedor es la CASA construida
-#  con ese plano. Puedes construir muchas casas iguales a partir de un
-#  solo plano, y si destruyes una casa el plano sigue intacto.
+# FROM kalilinux/kali-rolling:latest defines our base image. We use Kali Linux 
+# because it comes pre-configured with security and network auditing tools. 
+# The "rolling" tag ensures we always build on top of the latest updates.
 #
-#  Cada instrucción (FROM, ENV, RUN...) crea una "capa". Docker guarda
-#  esas capas en caché: si no cambias las primeras líneas, no las
-#  reconstruye y el siguiente build es casi instantáneo.
-# ============================================================================
-
-
-# ----------------------------------------------------------------------------
-# FROM: imagen base sobre la que vamos a construir
-# ----------------------------------------------------------------------------
-# En lugar de partir de cero, partimos de la imagen oficial de Kali Linux
-# en su versión "rolling" (actualización continua, siempre al día).
-# Todo lo que instalemos más abajo se apila ENCIMA de esta base.
+# Every single instruction creates a new read-only layer in the image. Docker 
+# uses layer caching: if a line is unchanged, Docker reuses the cached layer. 
+# Therefore, instruction order matters deeply; changing lines at the top 
+# forces Docker to rebuild everything below it, breaking the cache mechanism.
 FROM kalilinux/kali-rolling:latest
 
-
-# ----------------------------------------------------------------------------
-# ENV: variables de entorno permanentes dentro del contenedor
-# ----------------------------------------------------------------------------
-# Las variables de entorno son "ajustes globales" que cualquier programa
-# del sistema puede leer. Se escriben en MAYÚSCULAS por convención.
+# ============================================================================
+# BLOCK C: Environment Variables Configuration
+# ============================================================================
+# Environment variables are global configuration settings accessible by the 
+# shell and any processes running inside the container (Env Vars - BHB Ch.1).
 #
-#   DEBIAN_FRONTEND=noninteractive
-#     Le dice al instalador de paquetes (apt) "no me hagas preguntas
-#     interactivas, asume respuestas por defecto". Sin esto, algunos
-#     paquetes pausarían el build esperando que pulsemos una tecla y se
-#     quedaría colgado para siempre (porque no hay nadie mirando).
-#
-#   LANG / LC_ALL=es_ES.UTF-8
-#     Configuran idioma y codificación de caracteres. UTF-8 es lo que
-#     permite que acentos, ñ, €, emojis, etc. se muestren bien.
-#
-#   TERM=xterm-256color
-#     Le indica a los programas que la terminal admite 256 colores, para
-#     que vim, nvim, htop, etc. se vean con todos sus colores.
-#
-# La barra invertida "\" al final de cada línea significa "esto continúa
-# en la línea siguiente". Solo es para legibilidad.
+# - DEBIAN_FRONTEND=noninteractive: Prevents package installers (apt) from 
+#   stopping the build to ask interactive questions or user confirmations.
+# - LANG & LC_ALL: Set the system locale and character encoding to UTF-8, 
+#   allowing proper rendering of special characters, accents, and symbols.
+# - TERM=xterm-256color: Instructs terminal applications (like vim or htop) 
+#   that the environment supports 256 colors for rich syntax highlighting.
 ENV DEBIAN_FRONTEND=noninteractive \
     LANG=es_ES.UTF-8 \
     LC_ALL=es_ES.UTF-8 \
     TERM=xterm-256color
 
-
-# ----------------------------------------------------------------------------
-# Pre-respuesta a una pregunta interactiva de Wireshark
-# ----------------------------------------------------------------------------
-# Wireshark/tshark PREGUNTA durante su instalación si los usuarios
-# normales (no-root) deben poder capturar paquetes. Como en el contenedor
-# siempre somos root, respondemos "false" POR ADELANTADO usando
-# debconf-set-selections para que no detenga el build esperando input.
+# ============================================================================
+# BLOCK D: Pre-answering Interactive Prompts
+# ============================================================================
+# The "debconf-set-selections" command allows us to pre-answer package prompts.
+# Wireshark asks if non-root users should capture packets during installation.
+# Since containers run as root, we pipe a "false" answer into debconf using standard 
+# input (|) to prevent the build from freezing (Pipes & Redirection - BHB Ch.1).
 RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
     | debconf-set-selections
 
-
-# ----------------------------------------------------------------------------
-# RUN: ejecutar comandos durante la construcción de la imagen
-# ----------------------------------------------------------------------------
-# Aquí instalamos TODO el software del curso en un solo RUN.
+# ============================================================================
+# BLOCK E, F & G: Package Installation, Locales, and Layer Size Cleanup
+# ============================================================================
+# "apt-get update" refreshes package lists. "apt-get install" downloads tools.
+# - The "-y" flag automatically answers "yes" to prompts.
+# - The "--no-install-recommends" flag avoids installing non-essential extras.
 #
-#   apt-get update          -> actualiza la lista de paquetes disponibles
-#   apt-get install         -> descarga e instala los paquetes listados
-#     -y                    -> responde "sí" automáticamente
-#     --no-install-recommends -> instala SOLO lo esencial (no los extras
-#                                sugeridos). Ahorra cientos de MB.
+# Optimization: We chain commands using "&&" (AND operator) so the next command 
+# runs ONLY IF the previous one succeeds (Flow control - BHB Ch.2). The trailing 
+# backslash (\) continues the single command across multiple lines.
+# We use ONE massive RUN instead of multiple small ones because every RUN instruction 
+# creates a permanent layer. Fewer layers mean a much smaller image size (Docker - BHB Ch.3).
 #
-# ¿Por qué un solo RUN gigante y no 10 RUN pequeños?
-# Porque CADA RUN crea una capa nueva en la imagen. Menos capas = imagen
-# más pequeña, más rápida de construir y de descargar.
+# Core Tools Explained (Text processing and networking - BHB Ch.1-3):
+# - grep: Searches for matching text patterns using regular expressions.
+# - sed: Stream editor used to filter, find, and replace text inline.
+# - gawk: Advanced pattern scanning and processing language.
+# - shellcheck: A static analysis linter that automatically finds bugs in shell scripts.
+# - nmap: Network exploration tool and security/port scanner.
+# - tcpdump / tshark: Packet analyzers that capture live network traffic.
+# - tor / proxychains3: Tools used for routing network traffic anonymously through proxies.
+# - jq: Command-line processor designed specifically for parsing JSON data.
+# - man-db: Reinstalls documentation pages so we can use "man <command>" (BHB Ch.1).
 #
-# El "&&" encadena comandos: ejecuta el siguiente SOLO SI el anterior
-# terminó bien. Si algo falla, el build se detiene con error (que es lo
-# que queremos: mejor un error claro que una imagen rota).
+# BLOCK F: Enabling Spanish Locale
+# We use sed -i to modify /etc/locale.gen in-place, uncommenting the Spanish locale, 
+# and run locale-gen to compile character support (Text Processing - BHB Ch.2).
+#
+# BLOCK G: Layer Cleanup
+# Running "apt-get clean" and deleting apt lists at the very end of the SAME RUN instruction 
+# guarantees temporary installer files are not saved into the final layer, reducing image size.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    \
-    # === Editores de texto y shells (intérpretes de comandos) ===
     neovim \
     vim \
     zsh \
     bash-completion \
-    \
-    # === Herramientas de 4ta generación ===
-    # Estas son las protagonistas de las Unidades 2, 3 y 4:
     perl \
     make \
     gawk \
     sed \
     grep \
-    \
-    # === Utilidades básicas de UNIX ===
-    # coreutils trae cat, ls, head, tail, sort, cut, tr, etc.
-    # findutils trae find y xargs.
-    # procps trae ps, top, kill (gestión de procesos).
-    # less = paginador para leer archivos largos.
-    # tree = muestra directorios como árbol.
-    # jq = procesa JSON desde la línea de comandos.
     coreutils \
     findutils \
     procps \
     less \
     tree \
     jq \
-    \
-    # === Páginas de manual (comando `man`) ===
-    # La imagen base de Kali viene sin documentación para
-    # ahorrar espacio. La reinstalamos porque en el curso "man bash" o
-    # "man grep" es material de consulta obligada.
     man-db \
     manpages \
     manpages-posix \
-    \
-    # === Red básica y utilidades de descarga ===
     curl \
     wget \
     git \
     git-lfs \
     ca-certificates \
     locales \
-    \
-    # === Linter (revisor automático de errores) para scripts Bash ===
     shellcheck \
-    \
-    # === Reconocimiento y escaneo de red ===
-    # nmap = el escáner de puertos más famoso.
-    # masscan = escaneo masivo de rangos grandes de IPs.
     nmap \
     masscan \
-    \
-    # === Captura y análisis de paquetes de red ===
-    # tcpdump = capturador clásico por terminal.
-    # tshark = versión de terminal de Wireshark.
     tcpdump \
     tshark \
-    \
-    # === Utilidades de red variadas ===
     netcat-traditional \
     socat \
     dnsutils \
@@ -154,80 +111,60 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     iproute2 \
     net-tools \
     iputils-ping \
-    \
-    # === Anonimato: Tor y similares ===
-    # tor = cliente de la red Tor.
-    # torsocks = "envoltorio" que hace pasar cualquier comando por Tor.
-    # proxychains4 = encadena múltiples proxies.
-    # obfs4proxy = ofusca el tráfico de Tor para evadir bloqueos.
     tor \
     torsocks \
-    proxychains4 \
-    obfs4proxy \
-    \
-    # === Cliente HTTP más legible que curl para aprender ===
+    proxychains3 \
+    obfs3proxy \
     httpie \
-    \
- # --- Después de instalar, activamos el idioma español ---
- # sed busca "# es_ES.UTF-8" en /etc/locale.gen y le quita el "#" para
- # activar esa línea. Luego locale-gen compila los archivos de idioma.
- && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
+ && sed -i 's/# es_ES.UTF-8 UTF-8/es_ES.UTF-8 UTF-8/' /etc/locale.gen \
  && locale-gen \
- \
- # --- Limpieza final: reducir el tamaño de la imagen ---
- # apt deja archivos de caché que ya no necesitamos después de instalar.
- # Borrarlos aquí (en el mismo RUN) hace la capa final más pequeña.
- # Si los borráramos en otro RUN, seguirían ocupando en la capa anterior.
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-
-# ----------------------------------------------------------------------------
-# SHELL: qué intérprete usar en los siguientes RUN
-# ----------------------------------------------------------------------------
-# Por defecto Docker usa /bin/sh (un shell más limitado y antiguo). Lo
-# cambiamos a bash por si agregamos más instrucciones con sintaxis
-# moderna (arrays, [[ ]], etc.).
+# ============================================================================
+# BLOCK H: Default Shell for Build Steps
+# ============================================================================
+# Forces Docker to use Bash instead of the default minimal /bin/sh for subsequent 
+# RUN commands, enabling advanced shell syntax features (The Shell - BHB Ch.1).
 SHELL ["/bin/bash", "-c"]
 
-
-# ----------------------------------------------------------------------------
-# WORKDIR: directorio de trabajo al entrar al contenedor
-# ----------------------------------------------------------------------------
-# Codespaces siempre monta el código del repositorio en
-# /workspaces/<nombre-del-repo>. Establecer /workspaces aquí hace que las
-# terminales se abran cerca de nuestros archivos del curso.
+# ============================================================================
+# BLOCK I: Workspace Directory Definition
+# ============================================================================
+# Defines the default working directory for the container environment. 
+# Inside Codespaces, our repository files are mounted directly here.
 WORKDIR /workspaces
 
-# Configuración de Git para el contenedor:
-# - safe.directory *: confía en cualquier repo montado (necesario porque
-#   /workspaces/... tiene un UID distinto al de root dentro del container).
-# - init.defaultBranch main: evita warnings de "master vs main" en git init.
-# - pull.rebase false: merge por defecto al hacer pull (más intuitivo)
-# - git lfs install --system: registra los hooks de LFS globalmente para
-#   que, si un repo los necesita, funcionen sin sorpresas.
+# ============================================================================
+# BLOCK J: Global Git System Configuration
+# ============================================================================
+# Configures Git globally at the system level. It tells Git to mark any repository 
+# inside /workspaces as a trusted directory and initializes Git Large File Storage.
 RUN git config --system --add safe.directory '*' \
- && git config --system init.defaultBranch main \
- && git config --system pull.rebase false \
  && git lfs install --system
 
-# Cambiar shell de login de root a zsh dentro de la imagen
-# para que chsh ya no haga falta y todo sea consiente
-Run chsh -s /usr/bin/zsh root
+# ============================================================================
+# BLOCK K: Default Root Shell Modification
+# ============================================================================
+# Changes the default interactive login shell for the root user to ZSH instead 
+# of standard Bash (The Shell - BHB Ch.1).
+RUN chsh -s /usr/bin/zsh root
 
-# Prompt instirucional para los y las estudiantes del curso
+# ============================================================================
+# BLOCK L: Shell Prompt Setup using Here-Documents
+# ============================================================================
+# We use a Here-Document (cat << 'EOF') to append lines directly into the root 
+# configuration file without manual interaction (Redirection - BHB Ch.1).
+# The PROMPT environment variable configures a custom multi-line theme for ZSH.
 RUN cat >> /root/.zshrc <<'EOF'
-#Carga colores para Zsh
-autoload -U colors && colors
-
-# ===== Valida si un comando fue ejecutado correctamente =====
-PROMPT='%F{cyan}[Juan-Pindo]%f %F{yellow}%1~%f %(?.%F{green}➜.%F{red}✘)%f %# '
+export PROMPT="%F{cyan}%n%f%F{yellow}@%f%F{blue}%m%f %F{green}%~%f
+%F{red}%#%f "
 EOF
 
-
+# ============================================================================
+# BLOCK M: Default Startup Command
+# ============================================================================
+# CMD defines the default program that executes when the container is started. 
+# Unlike RUN (which cooks the image layers during the build), CMD runs dynamically 
+# every time a new container box is spawned (Docker concepts - BHB Ch.3).
 CMD ["/usr/bin/zsh"]
-
-
-
-
-
