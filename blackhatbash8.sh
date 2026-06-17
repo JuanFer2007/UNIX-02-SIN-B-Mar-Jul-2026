@@ -13,3 +13,14 @@ sed 's/Mozilla/Godzilla/g' log.txt
 sed 's/Mozilla/Godzilla/g' log.txt > newlog.txt
 grep -o "Mozilla" log.txt       # Searches 'log.txt' and prints only the exact matches of "Mozilla" on new lines, ignoring the rest of the text.
 grep -o "Godzilla" newlog.txt   # Searches 'newlog.txt' and displays only the word "Godzilla" each time it is found, isolating it from the context.
+sed 's/ //g' log.txt > newlog1.txt
+cat newlog1.txt
+sed '1d' newlog.txt > newlogd.txt
+cat newlogd.txt
+sed '1d' newlog.txt > newlogl.txt
+cat newlogl.txt
+cat newlog1.txt
+sed '5,7d' newlog.txt > newlog57.txt
+cat newlog57.txt
+sed -n '2,15 p' log.txt
+sed -i '1d' log.txt
