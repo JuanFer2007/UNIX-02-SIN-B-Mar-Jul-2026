@@ -24,3 +24,19 @@ sed '5,7d' newlog.txt > newlog57.txt
 cat newlog57.txt
 sed -n '2,15 p' log.txt
 sed -i '1d' log.txt
+sleep 100 &                             # Runs 'sleep 100' in the background so the terminal remains free to accept other commands.
+[1] 26193                               # Indicates this is background job #1 and its system Process ID (PID) is 26193.
+ps -ef | grep sleep                     # Lists all active system processes and filters the output to show only those containing "sleep".
+root           1       0  0 12:17 ? ... # Container process: The startup script keeping the Docker/Kubernetes container alive.
+root       26193     444  0 13:15 pts/1 # Your process: Confirms that your background 'sleep 100' (PID 26193) is currently running.
+root       26277       1  0 13:15 ? ... # Container process: A background loop from the container base system running a 1-second sleep.
+root       26280     444  0 13:15 pts/1 # Temporal process: The 'grep' command itself showing up in the process list while searching.
+jobs                                    # Lists all active background tasks managed by this specific terminal session.
+[1]+  Ejecutando                 sleep 100 &  # Terminal status: Confirms job #1 is actively running in the background.
+$ sleep 100 &                           # Prompt update: Triggered by pressing Enter, letting the shell report recent background changes.
+[1]+  Hecho                      sleep 100    # Notification: The first 'sleep 100' job (PID 26193) has finished successfully.
+[1] 27910                               # Launches a brand new background job #1 with a new system PID: 27910.
+fg %1                                   # Brings background job #1 back into the foreground (takes control of the current screen).
+sleep 100                               # Foreground execution: The terminal locks up here while waiting for the command to finish.
+^Z                                      # Keystroke (Ctrl+Z): Sends a SIGSTOP signal to pause the running foreground process immediately.
+[1]+  Detenido                   sleep 100    # Status update: Confirms the process is now suspended (frozen in memory, consuming no CPU).
