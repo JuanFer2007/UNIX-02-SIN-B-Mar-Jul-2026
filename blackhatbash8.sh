@@ -40,3 +40,9 @@ fg %1                                   # Brings background job #1 back into the
 sleep 100                               # Foreground execution: The terminal locks up here while waiting for the command to finish.
 ^Z                                      # Keystroke (Ctrl+Z): Sends a SIGSTOP signal to pause the running foreground process immediately.
 [1]+  Detenido                   sleep 100    # Status update: Confirms the process is now suspended (frozen in memory, consuming no CPU).
+bg %1                     # Resumes the suspended job #1 (the paused sleep 100) and moves it to run in the background.
+[1]+ sleep 100 &          # System notification: Confirms that job #1 is now running again in the background (indicated by the '&').
+[1]+  Hecho                      sleep 100 # Notification: Tells you that the 'sleep 100' process has just finished its execution successfully.
+nohup ./exercise2.sh &    # Runs the script 'exercise2.sh' immune to hangups (nohup) so it keeps running even if you close the terminal.
+[1] 32997                 # Indicates that the script is now background job #1 and has been assigned the system Process ID (PID) 32997.
+nohup: ignoring input and appending output to 'nohup.out' # The system safely detaches the process from your keyboard and redirects all messages/logs to a file.

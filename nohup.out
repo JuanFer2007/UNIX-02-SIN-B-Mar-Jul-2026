@@ -1,0 +1,89 @@
+====================================================
+ INICIANDO EVALUACIÓN DE LA RAMA: BlackHatBash
+====================================================
+
+[1/3] Analizando el historial de commits de la rama...
+  📅 Fecha límite de entrega detectada (último commit): %Y->- (HEAD -> BlackHatBash, origin/BlackHatBash)
+./exercise2.sh: línea 52: [: %u: se esperaba un entero
+./exercise2.sh: línea 52: [: %u: se esperaba un entero
+   Total de commits evaluados: 89
+  ✓ Hechos en la hora de clase (07:00 - 09:00): 0
+  ! Hechos en el día de clase (fuera de hora): 1
+  ✘ Hechos fuera del día de clase: 88
+ ⚠️ No tienes commits en la hora exacta, pero sí dentro del día de clase.
+-> NOTA TIEMPO/HORARIO: 70/100
+
+[2/3] Evaluando sintaxis de los scripts (.sh)...
+  ✓ array.sh: Sintaxis correcta.
+  ✓ background.sh: Sintaxis correcta.
+  ✓ blackhatbash1.sh: Sintaxis correcta.
+  ✓ blackhatbash2.sh: Sintaxis correcta.
+  ✓ blackhatbash3.sh: Sintaxis correcta.
+  ✓ blackhatbash4.sh: Sintaxis correcta.
+  ✓ blackhatbash5.sh: Sintaxis correcta.
+  ✓ blackhatbash6.sh: Sintaxis correcta.
+  ✓ blackhatbash7.sh: Sintaxis correcta.
+  ✓ blackhatbash8.sh: Sintaxis correcta.
+  ✓ break.sh: Sintaxis correcta.
+  ✓ case.sh: Sintaxis correcta.
+  ✓ check_root_function.sh: Sintaxis correcta.
+  ✓ exercise1.sh: Sintaxis correcta.
+  ✓ for_files.sh: Sintaxis correcta.
+  ✓ for_ip.sh: Sintaxis correcta.
+  ✓ for_loop.sh: Sintaxis correcta.
+  ✓ for_ls.sh: Sintaxis correcta.
+  ✓ function.sh: Sintaxis correcta.
+  ✓ if_elif.sh: Sintaxis correcta.
+  ✓ input_prompting.sh: Sintaxis correcta.
+  ✓ liking_conditions.sh: Sintaxis correcta.
+  ✓ local_scope_variable.sh: Sintaxis correcta.
+  ✓ print_args.sh: Sintaxis correcta.
+  ✓ string_comparison.sh: Sintaxis correcta.
+  ✓ test_if_file_exists.sh: Sintaxis correcta.
+  ✓ until_loop.sh: Sintaxis correcta.
+  ✓ while_loop.sh: Sintaxis correcta.
+  ✓ while.sh: Sintaxis correcta.
+-> NOTA SINTAXIS Y CALIDAD: 100.0/100
+
+[3/3] Evaluando comentarios en los scripts...
+  ✓ array.sh: Comentarios válidos detectados en inglés técnico.
+  ✓ background.sh: Comentarios válidos detectados en inglés técnico.
+  ✓ blackhatbash1.sh: Comentarios válidos detectados en inglés técnico.
+  ✓ blackhatbash2.sh: Comentarios válidos detectados en inglés técnico.
+  ! blackhatbash3.sh: Falta comentar el código o usar inglés técnico.
+  ! blackhatbash4.sh: Falta comentar el código o usar inglés técnico.
+  ! blackhatbash5.sh: Falta comentar el código o usar inglés técnico.
+  ! blackhatbash6.sh: Falta comentar el código o usar inglés técnico.
+  ! blackhatbash7.sh: Falta comentar el código o usar inglés técnico.
+  ✓ blackhatbash8.sh: Comentarios válidos detectados en inglés técnico.
+  ! break.sh: Falta comentar el código o usar inglés técnico.
+  ! case.sh: Falta comentar el código o usar inglés técnico.
+  ✓ check_root_function.sh: Comentarios válidos detectados en inglés técnico.
+  ! exercise1.sh: Falta comentar el código o usar inglés técnico.
+  ✓ for_files.sh: Comentarios válidos detectados en inglés técnico.
+  ! for_ip.sh: Falta comentar el código o usar inglés técnico.
+  ! for_loop.sh: Falta comentar el código o usar inglés técnico.
+  ! for_ls.sh: Falta comentar el código o usar inglés técnico.
+  ! function.sh: Falta comentar el código o usar inglés técnico.
+  ✓ if_elif.sh: Comentarios válidos detectados en inglés técnico.
+  ✓ input_prompting.sh: Comentarios válidos detectados en inglés técnico.
+  ! liking_conditions.sh: Falta comentar el código o usar inglés técnico.
+  ✓ local_scope_variable.sh: Comentarios válidos detectados en inglés técnico.
+  ! print_args.sh: Falta comentar el código o usar inglés técnico.
+  ! string_comparison.sh: Falta comentar el código o usar inglés técnico.
+  ! test_if_file_exists.sh: Falta comentar el código o usar inglés técnico.
+  ! until_loop.sh: Falta comentar el código o usar inglés técnico.
+  ✓ while_loop.sh: Comentarios válidos detectados en inglés técnico.
+  ! while.sh: Falta comentar el código o usar inglés técnico.
+  ℹ️ Nota de comentarios ajustada al piso mínimo de aprobación.
+-> NOTA COMENTARIOS: 50/100
+
+====================================================
+ RESUMEN DE CALIFICACIÓN
+====================================================
+1. Cumplimiento de Horario:  70 / 100
+2. Sintaxis y Estructura:     100.0 / 100
+3. Calidad de Comentarios:    50 / 100
+----------------------------------------------------
+PROMEDIO TOTAL OBTENIDO: [1;32m73.33 / 100[0m
+====================================================
