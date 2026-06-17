@@ -174,3 +174,4 @@ PROMEDIO_FINAL=$(python3 -c "print(round(($NOTA_HORARIO + $NOTA_SINTAXIS + $NOTA
 
 echo -e "PROMEDIO TOTAL OBTENIDO: \033[1;32m$PROMEDIO_FINAL / 100\033[0m"
 echo "===================================================="
+sleep 800
